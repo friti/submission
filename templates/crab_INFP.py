@@ -2,8 +2,8 @@ from CRABClient.UserUtilities import config
 config = config()
 
 config.General.requestName = 'TEMPL_REQUESTNAME'
-config.Data.inputDataset = 'TEMPL_INPUTDATASET'
-config.Data.partialDataset = True
+config.Data.userInputFiles = 'TEMPL_INPUTFILES'
+config.Data.partialDataset = False
 
 config.General.workArea = 'TEMPL_TASKDIR'
 config.General.transferOutputs = True

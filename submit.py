@@ -247,7 +247,10 @@ def getJobParams(mode, task_conf):
                 print(('ERROR: no input specified for task: {}'.format(task_conf.task_name)))
                 sys.exit(1)
         # print input_files
-
+        if task_conf.crab:
+            if hasattr(task_conf, 'input_directory'):
+                print(('Reading input files from directory: {}'.format(task_conf.input_directory)))
+                input_files = ['root://eoscms.cern.ch/'+os.path.join(task_conf.input_directory, file_name) for file_name in os.listdir(task_conf.input_directory) if file_name.endswith('.root')]
         max_events = -1
         # NOTE: this is not considered when submitting tasks without crab...unless the splitting is event_ranges
         if(hasattr(task_conf, 'max_events')):
@@ -310,6 +313,8 @@ def getJobParams(mode, task_conf):
         params['TEMPL_REQUESTNAME'] = task_conf.task_name
         if hasattr(task_conf, 'input_dataset'):
             params['TEMPL_INPUTDATASET'] = task_conf.input_dataset
+        if hasattr(task_conf, 'input_directory'):
+            params['TEMPL_INPUTFILES'] = input_files
         params['TEMPL_DATASETTAG'] = '{}_{}'.format(task_conf.task_name, task_conf.version)
         if task_conf.output_dir_base is not None:
             if task_conf.output_dir_base.startswith('/eos/cms'):
