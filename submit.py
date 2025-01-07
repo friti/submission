@@ -170,7 +170,7 @@ def getLSs(file_name):
 def splitFiles(files, splitting_mode, splitting_granularity, max_events=None):
     split_files = []
     split_logic = []
-    if splitting_mode == 'file_based':
+    if splitting_mode == 'FileBased':
         size = int(splitting_granularity)
         split_files = [files[i:i+size] for i in range(0, len(files), size)]
     elif splitting_mode == 'lumi_based':
@@ -291,7 +291,7 @@ def getJobParams(mode, task_conf):
             print("# of PU files: {}".format(len(pu_files)))
             print("# PU file per job: {}".format(pu_splitting_granularity))
             split_pu_files, split_pu_logic = splitFiles(files=pu_files,
-                                                        splitting_mode='file_based',
+                                                        splitting_mode='FileBased',
                                                         splitting_granularity=pu_splitting_granularity)
             print(len(split_pu_files))
         # the first 2 are compulsory for all modes

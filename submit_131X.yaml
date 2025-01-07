@@ -8,7 +8,7 @@ Common:
     - MultiPi_PU0
 
   version: 131Xv9a
-  output_dir_base: /eos/cms/store/group/cmst3/group/l1tr/friti/l1tpf/ntuples
+  output_dir_base: /eos/cms/store/cmst3/group/l1tr/friti/l1tpf/ntuples
   ncpu: 1
   #max_memory: 7000
   output_file_name: inputs131X.root
@@ -21,7 +21,7 @@ Configuration:
 MultiPi_PU0:
    input_directory: /eos/cms/store/cmst3/group/l1tr/friti/Multipion_Phase2Spring23GS_DIGIRECOMiniAOD_PU0_2024Dec16/CRAB_UserFiles/crab_Multipion-Phase2Spring23GS/241216_131843/0000/ 
    crab: True
-   splitting_mode: file_based
+   splitting_mode: FileBased
    splitting_granularity: 1
    max_events: -1
    job_flavor: longlunch
