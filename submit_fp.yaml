@@ -1,0 +1,36 @@
+# espresso     = 20 minutes
+# microcentury = 1 hour
+# longlunch    = 2 hours
+# workday      = 8 hours
+# tomorrow     = 1 day
+# testmatch    = 3 days
+# nextweek     = 1 week
+
+
+Common:
+  mode: FP
+  name: fp
+  
+  tasks:
+    - MultiPi_ntuples_PU0
+
+  version: 131Xv9a
+  output_dir_base: /eos/cms/store/cmst3/group/l1tr/friti/l1tpf/ntuples/oldPFClusters
+  ncpu: 1
+  output_file_name: perfTuple.root
+
+Configuration:
+  - mode: FP
+    cmssw_config: ../FastPUPPI/NtupleProducer/python/runPerformanceNTuple.py
+
+MultiPi_ntuples_PU0:
+  #input_directory: /eos/cms/store/cmst3/group/l1tr//friti/l1tpf/prova
+  input_directory: /eos/cms/store/cmst3/group/l1tr//friti/l1tpf/ntuples/CRAB_UserFiles/MultiPi_PU0_131Xv9a/250107_091808/0000/
+  crab: False
+  splitting_mode: FileBased
+  splitting_granularity: 1
+  inline_customize:
+   - goGun();
+   - noPU();
+  job_flavor: espresso
+  max_events: -1

@@ -456,8 +456,8 @@ def createJobExecutable(mode, params):
         # print(str(params[key]))
         # print(str(params[key]).encode("unicode_escape").decode())
         if(key != 'TEMPL_CUSTOMIZE'):
-            params_file.write('{}={}\n'.format(key.split('_')[1], str(params[key]).encode("unicode_escape").decode()))
-    
+            string = str(params[key]).strip(' ').encode("unicode_escape").decode()
+            params_file.write('{}={}\n'.format(key.split('_')[1], string.replace(" ","")))
     params_file.close()
 
 

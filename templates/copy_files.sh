@@ -1,5 +1,8 @@
 #!/bin/bash
 
+CLUSTERID=$1
+PROCID=$2
+
 get_eos_protocol() {
     dirname=$1
     protocol=''

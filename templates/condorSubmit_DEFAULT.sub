@@ -7,11 +7,11 @@ log                   = TEMPL_TASKDIR/logs/condor.$(ClusterId).log
 +JobFlavour           = "TEMPL_JOBFLAVOR"
 
 RequestCpus = TEMPL_NCPU
-MY.WantOS = "el8"
+#MY.WantOS = "el8"
 transfer_input_files  = TEMPL_TASKDIR/copy_files.sh,TEMPL_TASKDIR/conf/params.sh,TEMPL_TASKBASEDIR/sandbox.tgz,TEMPL_TASKBASEDIR/cmssw_setup.sh
 # +PreCmd               = "cmssw_setup.sh"
 +PostCmd              = "copy_files.sh"
-
++PostArguments              = "$(ClusterID) $(ProcId)"
 +AccountingGroup = "group_u_CMST3.all"
 
 transfer_output_files   = ""
