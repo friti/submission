@@ -12,8 +12,8 @@ Common:
   name: perfnano_fp
 
   tasks:
-    - TTbar_perfNano.root_140X_1510pre4_PU200
-    - SingleNautrino_perfNano.root_140X_1510pre4_PU200
+    - TTbar_perfNano_140X_1510pre4_PU200
+    - SingleNautrino_perfNano_140X_1510pre4_PU200
 
   version: 140X
   output_dir_base: /eos/cms/store/cmst3/group/l1tr/friti/l1tpf/ntuples/15_1_0_pre4/140X/baseline/
@@ -24,7 +24,7 @@ Configuration:
   - mode: FP
     cmssw_config: ../FastPUPPI/NtupleProducer/python/runPerformanceNTuple.py
 
-TTbar_perfNano.root_140X_1510pre4_PU200:
+TTbar_perfNano_140X_1510pre4_PU200:
   input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/TT_PU200/
   crab: False
   splitting_mode: FileBased
@@ -35,7 +35,7 @@ TTbar_perfNano.root_140X_1510pre4_PU200:
   job_flavor: espresso
   max_events: -1
 
-SingleNautrino_perfNano.root_140X_1510pre4_PU200:
+SingleNautrino_perfNano_140X_1510pre4_PU200:
   input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/SingleNeutrino_PU200/
   crab: False
   splitting_mode: FileBased
