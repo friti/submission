@@ -32,7 +32,7 @@ TTbar_perftuple_140X_1510pre4_PU200:
   inline_customize:
    - saveCands();
    - saveGenCands();
-  job_flavor: espresso
+  job_flavor: longlunch
   max_events: -1
 
 SingleNautrino_perftuple_140X_1510pre4_PU200:
@@ -43,5 +43,5 @@ SingleNautrino_perftuple_140X_1510pre4_PU200:
   inline_customize:
    - saveCands();
    - saveGenCands();
-  job_flavor: espresso
+  job_flavor: longlunch
   max_events: -1

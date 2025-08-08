@@ -18,7 +18,7 @@ Common:
   version: 140X
   output_dir_base: /eos/cms/store/cmst3/group/l1tr/friti/l1tpf/ntuples/15_1_0_pre4/140X/baseline/
   ncpu: 1
-  output_file_name: perfNano.root.root
+  output_file_name: perfNano.root
 
 Configuration:
   - mode: FP
@@ -32,7 +32,7 @@ TTbar_perfNano_140X_1510pre4_PU200:
   inline_customize:
    - saveCands();
    - saveGenCands();
-  job_flavor: espresso
+  job_flavor: longlunch
   max_events: -1
 
 SingleNautrino_perfNano_140X_1510pre4_PU200:
@@ -43,5 +43,5 @@ SingleNautrino_perfNano_140X_1510pre4_PU200:
   inline_customize:
    - saveCands();
    - saveGenCands();
-  job_flavor: espresso
+  job_flavor: longlunch
   max_events: -1
