@@ -1,0 +1,75 @@
+# espresso     = 20 minutes
+# microcentury = 1 hour
+# longlunch    = 2 hours
+# workday      = 8 hours
+# tomorrow     = 1 day
+# testmatch    = 3 days
+# nextweek     = 1 week
+
+
+Common:
+  mode: FP
+  name: fp
+
+  tasks:
+    - SinglePion_perftuple_151X_1510pre4_pt2to200_PU200_NNvtxOn
+    - SinglePion_perftuple_151X_1510pre4_pt2to200_PU0_NNvtxOn
+    - SinglePion_perftuple_151X_1510pre4_pt200to500_PU200_NNvtxOn
+    - SinglePion_perftuple_151X_1510pre4_pt200to500_PU0_NNvtxOn
+
+  version: 151X
+  output_dir_base: /eos/cms/store/cmst3/group/l1tr/friti/l1tpf/ntuples/15_1_0_pre4/151X/baseline/
+  ncpu: 1
+  output_file_name: perfTuple.root
+
+Configuration:
+  - mode: FP
+    cmssw_config: ../FastPUPPI/NtupleProducer/python/runPerformanceNTuple.py
+
+SinglePion_perftuple_151X_1510pre4_pt2to200_PU200_NNvtxOn:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/elfontan/INFP_151Xv0/SinglePion_PT2to200/SinglePion_PT2to200_PU200_151Xv0/250910_165250/0000/ 
+  crab: False
+  splitting_mode: FileBased
+  splitting_granularity: 1
+  inline_customize:
+   - saveCands();
+   - saveGenCands();
+   - goGun();
+  job_flavor: nextweek
+  max_events: -1
+
+SinglePion_perftuple_151X_1510pre4_pt2to200_PU0_NNvtxOn:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/elfontan/INFP_151Xv0/SinglePion_PT2to200/SinglePion_PT2to200_PU0_151Xv0/250910_165318/0000/
+  crab: False
+  splitting_mode: FileBased
+  splitting_granularity: 1
+  inline_customize:
+   - saveCands();
+   - saveGenCands();
+   - goGun();
+  job_flavor: nextweek
+  max_events: -1
+
+SinglePion_perftuple_151X_1510pre4_pt200to500_PU200_NNvtxOn:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/elfontan/INFP_151Xv0/SinglePion_PT200to500/SinglePion_PT200to500_PU200_151Xv0/250919_143630/0000/
+  crab: False
+  splitting_mode: FileBased
+  splitting_granularity: 1
+  inline_customize:
+   - saveCands();
+   - saveGenCands();
+   - goGun();
+  job_flavor: nextweek
+  max_events: -1
+
+SinglePion_perftuple_151X_1510pre4_pt200to500_PU0_NNvtxOn:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/elfontan/INFP_151Xv0/SinglePion_PT200to500/SinglePion_PT200to500_PU0_151Xv0/250910_165335/0000/ 
+  crab: False
+  splitting_mode: FileBased
+  splitting_granularity: 1
+  inline_customize:
+   - saveCands();
+   - saveGenCands();
+   - goGun();
+  job_flavor: nextweek
+  max_events: -1
